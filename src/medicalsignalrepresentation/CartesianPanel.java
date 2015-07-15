@@ -111,6 +111,7 @@ class CartesianPanel extends JPanel implements ActionListener{
             //listPoints.clear();
             
             POIFSFileSystem file = new POIFSFileSystem(new FileInputStream("File004.xls"));
+            //POIFSFileSystem file = new POIFSFileSystem(new FileInputStream("File001preproc.csv"));
             
             //Create Workbook instance holding reference to .xlsx file
             HSSFWorkbook workbook = new HSSFWorkbook(file);
