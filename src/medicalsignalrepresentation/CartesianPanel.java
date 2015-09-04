@@ -142,7 +142,6 @@ class CartesianPanel extends JPanel implements ActionListener{
                     Double yValue = null;
                     yValue = Double.valueOf(values[column]);
                     Point2D.Double point = new Point2D.Double(counter, yValue);
-                    System.out.println("Value "+yValue);
                     listPoints.add(point);
                     counter++;
                     counterTop++;
