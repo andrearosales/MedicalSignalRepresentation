@@ -633,7 +633,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("VO2(computed)", 0, 2, Color.BLUE);
+                    panel.setAxes("VO2", 0, 2, Color.BLUE);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contVO2.add(scroll);

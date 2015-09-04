@@ -19,7 +19,11 @@ import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JPanel;
@@ -106,7 +110,67 @@ class CartesianPanel extends JPanel implements ActionListener{
      * Method that reads the file where the points are stored.
      */
     public void readFile(){
-        try
+        
+        String csvFile = "0004_300.csv";
+	BufferedReader br = null;
+	String line = "";
+	String cvsSplitBy = ";";
+        
+        try {
+
+		br = new BufferedReader(new FileReader(csvFile));
+                line = br.readLine();
+                int count = 0;
+                String[] titles = line.split(cvsSplitBy);
+                for(int i = 0 ; i<titles.length;i++){
+                    if(titles[i].equals(dataY)){
+                        column = count;
+                        break;
+                    }
+                    else{
+                        count++;
+                    }
+                }
+                for(int i=1;i<=counterTop;i++){
+                    line = br.readLine();
+                }
+                
+                int top = 0;
+                while ((line = br.readLine()) != null && top<xCoordNumbers)
+                {
+                    String[] values = line.split(cvsSplitBy);
+                    Double yValue = null;
+                    yValue = Double.valueOf(values[column]);
+                    Point2D.Double point = new Point2D.Double(counter, yValue);
+                    System.out.println("Value "+yValue);
+                    listPoints.add(point);
+                    counter++;
+                    counterTop++;
+                    top++;
+                }
+                if((line = br.readLine()) == null)
+                    finish=true;
+                System.out.println("countertop "+counterTop);
+                //counter=1;
+
+                cicle++;
+                
+
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	} finally {
+		if (br != null) {
+			try {
+				br.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+        
+        /*try
         {
             //listPoints.clear();
             
@@ -166,7 +230,7 @@ class CartesianPanel extends JPanel implements ActionListener{
         catch (Exception e)
         {
             e.printStackTrace();
-        }
+        }*/
     }
     
     /**
