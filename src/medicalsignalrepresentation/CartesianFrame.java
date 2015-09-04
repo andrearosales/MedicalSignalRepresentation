@@ -347,7 +347,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FIO2", 0, 1, Color.BLACK);
+                    panel.setAxes("FIO2", 0, 22, Color.BLACK);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contFIO2.add(scroll);
@@ -373,7 +373,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FEO2", 0, 1, Color.LIGHT_GRAY);
+                    panel.setAxes("FEO2", 0, 22, Color.LIGHT_GRAY);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contFEO2.add(scroll);
@@ -425,7 +425,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FECO2", 0, 1, Color.YELLOW);
+                    panel.setAxes("FECO2", 0, 8, Color.YELLOW);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contFECO2.add(scroll);
@@ -451,7 +451,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FETCO2", 0, 1, Color.PINK);
+                    panel.setAxes("FETCO2", 0, 10, Color.PINK);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contFETCO2.add(scroll);
@@ -477,7 +477,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FETO2", 0, 1, Color.ORANGE);
+                    panel.setAxes("FETO2", 0, 21, Color.ORANGE);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contFETO2.add(scroll);
@@ -503,7 +503,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("VE", 7, 76, Color.MAGENTA);
+                    panel.setAxes("VE", 0, 234, Color.MAGENTA);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contVE.add(scroll);
@@ -555,7 +555,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("TI", 0, 4, Color.GRAY);
+                    panel.setAxes("TI", 0, 6, Color.GRAY);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contTI.add(scroll);
@@ -581,7 +581,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("TE", 0, 7, Color.CYAN);
+                    panel.setAxes("TE", 0, 12, Color.CYAN);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contTE.add(scroll);
@@ -607,7 +607,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("HR", 58, 164, Color.RED);
+                    panel.setAxes("HR", 33, 215, Color.RED);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contHR.add(scroll);
@@ -633,7 +633,7 @@ class CartesianFrame extends JFrame implements ItemListener{
                     
                     CartesianPanel panel = new CartesianPanel();
                     panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("VO2", 0, 2, Color.BLUE);
+                    panel.setAxes("VO2", 0, 6411, Color.BLUE);
                     panel.setBackground(Color.white);
                     JScrollPane scroll = new JScrollPane(panel);
                     contVO2.add(scroll);

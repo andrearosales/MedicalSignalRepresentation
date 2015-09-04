@@ -361,8 +361,8 @@ class CartesianPanel extends JPanel implements ActionListener{
             Point2D.Double end;
             Point2D.Double initialVertical;
             Point2D.Double endVertical;
-            Point2D.Double initialHorizontal;
-            Point2D.Double endHorizontal;
+            //Point2D.Double initialHorizontal;
+            //Point2D.Double endHorizontal;
             
             if(yMaximum > yCoordNumbers){
                 initial = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
@@ -378,10 +378,10 @@ class CartesianPanel extends JPanel implements ActionListener{
                 
                 endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
                         Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y*yCoordNumbers/yMaximum) * yLength));
-                initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
+                /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                         Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y*yCoordNumbers/yMaximum) * yLength));
                 endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
-                        Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y*yCoordNumbers/yMaximum) * yLength));
+                        Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y*yCoordNumbers/yMaximum) * yLength));*/
             }
             else{
                 initial = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
@@ -397,10 +397,10 @@ class CartesianPanel extends JPanel implements ActionListener{
                         Y_AXIS_SECOND_Y_COORD);
                 endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
                         Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
-                initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
+                /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                         Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
                 endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
-                        Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
+                        Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));*/
             }
                         
             g2.draw(new Line2D.Double(initial,end));
@@ -409,36 +409,36 @@ class CartesianPanel extends JPanel implements ActionListener{
             g2.setStroke(stroke1);
             
             g2.draw(new Line2D.Double(initialVertical,endVertical));
-            g2.draw(new Line2D.Double(initialHorizontal,endHorizontal));
+            //g2.draw(new Line2D.Double(initialHorizontal,endHorizontal));
             
         }
         Point2D.Double initialVertical;
         Point2D.Double endVertical;
-        Point2D.Double initialHorizontal;
-        Point2D.Double endHorizontal;
+        //Point2D.Double initialHorizontal;
+        //Point2D.Double endHorizontal;
         if(yMaximum > yCoordNumbers){
             initialVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
                     Y_AXIS_SECOND_Y_COORD);
             endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
                     Y_AXIS_SECOND_Y_COORD - ((listPoints.get(listPoints.size()-1).y*yCoordNumbers/yMaximum) * yLength));
-            initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
+            /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                     Y_AXIS_SECOND_Y_COORD - ((listPoints.get(listPoints.size()-1).y*yCoordNumbers/yMaximum) * yLength));
             endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
-                    Y_AXIS_SECOND_Y_COORD - ((listPoints.get(listPoints.size()-1).y*yCoordNumbers/yMaximum) * yLength));
+                    Y_AXIS_SECOND_Y_COORD - ((listPoints.get(listPoints.size()-1).y*yCoordNumbers/yMaximum) * yLength));*/
         }
         else{
             initialVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
                     Y_AXIS_SECOND_Y_COORD);
             endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
                     Y_AXIS_SECOND_Y_COORD - (listPoints.get(listPoints.size()-1).y * yLength));
-            initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
+            /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                     Y_AXIS_SECOND_Y_COORD - (listPoints.get(listPoints.size()-1).y * yLength));
             endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(listPoints.size()-1).x * xLength),
-                    Y_AXIS_SECOND_Y_COORD - (listPoints.get(listPoints.size()-1).y * yLength));
+                    Y_AXIS_SECOND_Y_COORD - (listPoints.get(listPoints.size()-1).y * yLength));*/
         }
         
         g2.draw(new Line2D.Double(initialVertical,endVertical));
-        g2.draw(new Line2D.Double(initialHorizontal,endHorizontal));
+        //g2.draw(new Line2D.Double(initialHorizontal,endHorizontal));
         
         if(!finish)
             timer.start();
