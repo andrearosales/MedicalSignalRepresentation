@@ -20,8 +20,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 /**
+ * Class that plots the selected physiological signals.
  *
- * @author aRosales Class that plots the selected physiological signals.
+ * @author aRosales
  */
 class CartesianFrame extends JFrame implements ItemListener {
 
@@ -53,7 +54,7 @@ class CartesianFrame extends JFrame implements ItemListener {
      * Constructor of the class that initializes the initial plots with the
      * received selected options.
      *
-     * @param options - List of initially selected signals
+     * @param options List of initially selected signals.
      */
     public CartesianFrame(ArrayList<String> options) {
         signals = options;
@@ -275,6 +276,11 @@ class CartesianFrame extends JFrame implements ItemListener {
         add(containerChecks);
     }
 
+    /**
+     * Inherited method that notifies each time an item was selected.
+     *
+     * @param e Item that was selected.
+     */
     @Override
     public void itemStateChanged(ItemEvent e) {
 

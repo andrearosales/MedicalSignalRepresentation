@@ -9,9 +9,9 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 /**
+ * Panel that contains the plots of the signal the user selected.
  *
- * @author aRosales Panel that contains the plots of the signal the user
- * selected.
+ * @author aRosales
  */
 public class BigPanel extends JPanel {
 
@@ -32,12 +32,17 @@ public class BigPanel extends JPanel {
      * Constructor of the class that initializes the values that are needed to
      * specify the panel dimension.
      *
-     * @param height - Height of the title label
+     * @param height Height of the title label.
      */
     public BigPanel(int height) {
         titleAmount = height;
     }
 
+    /**
+     * Method that helps the graphic visualization.
+     *
+     * @return Whole dimension of the panel.
+     */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension(X_AXIS_AMOUNT + (xCoordNumbers * xLength), (Y_AXIS_AMOUNT * this.getComponents().length) + titleAmount);

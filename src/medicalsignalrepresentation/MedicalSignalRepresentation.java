@@ -8,13 +8,16 @@ package medicalsignalrepresentation;
 import javax.swing.SwingUtilities;
 
 /**
+ * Main class of the project. Runs the panel with the physiological signals that
+ * can be displayed.
  *
- * @author aRosales Main class of the project. Runs the panel with the
- * physiological signals that can be displayed.
+ * @author aRosales
  */
 public class MedicalSignalRepresentation {
 
     /**
+     * Main method that starts the plot visualization.
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {

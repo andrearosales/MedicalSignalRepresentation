@@ -27,8 +27,9 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
+ * Class that individually manages each of the signals.
  *
- * @author aRosales Class that individually manages each of the signals.
+ * @author aRosales
  */
 class CartesianPanel extends JPanel implements ActionListener {
 
@@ -73,10 +74,10 @@ class CartesianPanel extends JPanel implements ActionListener {
      * Method that allows the initialization of the specific data for each
      * signal.
      *
-     * @param data - Title of the signal
-     * @param minimum - Minimum value the signal can take
-     * @param maximum - Maximum value the signal can take
-     * @param color - Specified color for displaying the signal
+     * @param data Title of the signal.
+     * @param minimum Minimum value the signal can take.
+     * @param maximum Maximum value the signal can take.
+     * @param color Specified color for displaying the signal.
      */
     public void setAxes(String data, int minimum, int maximum, Color color) {
         xLength = (X_AXIS_SECOND_X_COORD - X_AXIS_FIRST_X_COORD)
@@ -159,6 +160,12 @@ class CartesianPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Inherited method in charge of setting the components of the image so they
+     * can be visualized.
+     *
+     * @param g Graphic were the components will be displayed.
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -349,6 +356,12 @@ class CartesianPanel extends JPanel implements ActionListener {
         revalidate();
     }
 
+    /**
+     * Method that is triggered each s seconds in order to analize if more data
+     * points were added.
+     *
+     * @param ae Action event that triggered the method.
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == timer) {
@@ -360,6 +373,11 @@ class CartesianPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Method that helps the graphic visualization.
+     *
+     * @return Whole dimension of the panel.
+     */
     @Override
     public Dimension getPreferredSize() {
         return new Dimension((X_AXIS_FIRST_X_COORD * 2) + (listPoints.size() * xLength), Y_AXIS_SECOND_Y_COORD + Y_AXIS_X_COORD);
