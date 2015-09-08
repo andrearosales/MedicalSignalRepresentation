@@ -31,24 +31,20 @@ class CartesianFrame extends JFrame implements ItemListener{
     private JPanel containerChecks;
     private JCheckBox FIO2;
     private JCheckBox FEO2;
-    //private JCheckBox FICO2;
     private JCheckBox FECO2;
     private JCheckBox FETCO2;
     private JCheckBox FETO2;
     private JCheckBox VE;
-    //private JCheckBox RR;
     private JCheckBox TI;
     private JCheckBox TE;
     private JCheckBox HR;
     private JCheckBox VO2;
     private Container contFIO2;
     private Container contFEO2;
-    //private Container contFICO2;
     private Container contFECO2;
     private Container contFETCO2;
     private Container contFETO2;
     private Container contVE;
-    //private Container contRR;
     private Container contTI;
     private Container contTE;
     private Container contHR;
@@ -114,24 +110,6 @@ class CartesianFrame extends JFrame implements ItemListener{
                     bigPanel.add(contFEO2);
                     FEO2.setSelected(true);
                 }
-                /*else if(selected.equalsIgnoreCase("FICO2")){
-                    contFICO2= new Container();
-                    contFICO2.setLayout(new BoxLayout(contFICO2, BoxLayout.Y_AXIS));
-                    
-                    JLabel title = new JLabel();
-                    title.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    title.setText("Fraction of inspired carbon dioxide (FICO2)");
-                    contFICO2.add(title);
-                    
-                    CartesianPanel panel = new CartesianPanel();
-                    panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FICO2", 0, 1, Color.DARK_GRAY);
-                    JScrollPane scroll = new JScrollPane(panel);
-                    contFICO2.add(scroll);
-                    
-                    bigPanel.add(contFICO2);
-                    FICO2.setSelected(true);
-                }*/
                 else if(selected.equalsIgnoreCase("FECO2")){
                     contFECO2= new Container();
                     contFECO2.setLayout(new BoxLayout(contFECO2, BoxLayout.Y_AXIS));
@@ -204,24 +182,6 @@ class CartesianFrame extends JFrame implements ItemListener{
                     bigPanel.add(contVE);
                     VE.setSelected(true);
                 }
-                /*else if(selected.equalsIgnoreCase("RR")){
-                    contRR= new Container();
-                    contRR.setLayout(new BoxLayout(contRR, BoxLayout.Y_AXIS));
-                    
-                    JLabel title = new JLabel();
-                    title.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    title.setText("Respiratory rate (RR)");
-                    contRR.add(title);
-                    
-                    CartesianPanel panel = new CartesianPanel();
-                    panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("RR", 6, 47, Color.GREEN);
-                    JScrollPane scroll = new JScrollPane(panel);
-                    contRR.add(scroll);
-                    
-                    bigPanel.add(contRR);
-                    RR.setSelected(true);
-                }*/
                 else if(selected.equalsIgnoreCase("TI")){
                     contTI= new Container();
                     contTI.setLayout(new BoxLayout(contTI, BoxLayout.Y_AXIS));
@@ -382,32 +342,6 @@ class CartesianFrame extends JFrame implements ItemListener{
                 }
             }
         }
-        /*else if(source == FICO2){
-            if (e.getStateChange() == ItemEvent.DESELECTED) {
-                bigPanel.remove(contFICO2);
-                contFICO2=null;
-            }
-            else {
-                if(contFICO2==null){
-                    contFICO2= new Container();
-                    contFICO2.setLayout(new BoxLayout(contFICO2, BoxLayout.Y_AXIS));
-                    
-                    JLabel title = new JLabel();
-                    title.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    title.setText("Fraction of inspired carbon dioxide (FICO2)");
-                    contFICO2.add(title);
-                    
-                    CartesianPanel panel = new CartesianPanel();
-                    panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("FICO2", 0, 1, Color.DARK_GRAY);
-                    panel.setBackground(Color.white);
-                    JScrollPane scroll = new JScrollPane(panel);
-                    contFICO2.add(scroll);
-                    
-                    bigPanel.add(contFICO2);
-                }
-            }
-        }*/
         else if(source == FECO2){
             if (e.getStateChange() == ItemEvent.DESELECTED) {
                 bigPanel.remove(contFECO2);
@@ -512,32 +446,6 @@ class CartesianFrame extends JFrame implements ItemListener{
                 }
             }
         }
-        /*else if(source == RR){
-            if (e.getStateChange() == ItemEvent.DESELECTED) {
-                bigPanel.remove(contRR);
-                contRR=null;
-            }
-            else {
-                if(contRR==null){
-                    contRR= new Container();
-                    contRR.setLayout(new BoxLayout(contRR, BoxLayout.Y_AXIS));
-                    
-                    JLabel title = new JLabel();
-                    title.setAlignmentX(Component.CENTER_ALIGNMENT);
-                    title.setText("Respiratory rate (RR)");
-                    contRR.add(title);
-                    
-                    CartesianPanel panel = new CartesianPanel();
-                    panel.setAlignmentX(Component.LEFT_ALIGNMENT);
-                    panel.setAxes("RR", 6, 47, Color.GREEN);
-                    panel.setBackground(Color.white);
-                    JScrollPane scroll = new JScrollPane(panel);
-                    contRR.add(scroll);
-                    
-                    bigPanel.add(contRR);
-                }
-            }
-        }*/
         else if(source == TI){
             if (e.getStateChange() == ItemEvent.DESELECTED) {
                 bigPanel.remove(contTI);
@@ -642,7 +550,6 @@ class CartesianFrame extends JFrame implements ItemListener{
                 }
             }
         }
-        //bigPanel.remove();
         revalidate();
         repaint();
     }
@@ -656,8 +563,6 @@ class CartesianFrame extends JFrame implements ItemListener{
         FIO2.addItemListener(this);
         FEO2 = new JCheckBox("Fraction of expired oxygen (FEO2)");
         FEO2.addItemListener(this);
-        //FICO2 = new JCheckBox("Fraction of inspired carbon dioxide (FICO2)");
-        //FICO2.addItemListener(this);
         FECO2 = new JCheckBox("Fraction of expired carbon dioxide (FECO2)");
         FECO2.addItemListener(this);
         FETCO2 = new JCheckBox("Fraction of end-tidal carbon dioxide (FETCO2)");
@@ -666,8 +571,6 @@ class CartesianFrame extends JFrame implements ItemListener{
         FETO2.addItemListener(this);
         VE = new JCheckBox("Ventilation (VE)");
         VE.addItemListener(this);
-        //RR = new JCheckBox("Respiratory rate (RR)");
-        //RR.addItemListener(this);
         TI= new JCheckBox("Inspiratory time (IT)");
         TI.addItemListener(this);
         TE = new JCheckBox("Expiratory time (ET)");
@@ -678,16 +581,13 @@ class CartesianFrame extends JFrame implements ItemListener{
         VO2.addItemListener(this);
         
         containerChecks = new JPanel();
-        //containerChecks.setLayout(new GridLayout(6,2));
         containerChecks.setLayout(new GridLayout(5,2));
         containerChecks.add(FIO2);
         containerChecks.add(FEO2);
-        //containerChecks.add(FICO2);
         containerChecks.add(FECO2);
         containerChecks.add(FETCO2);
         containerChecks.add(FETO2);
         containerChecks.add(VE);
-        //containerChecks.add(RR);
         containerChecks.add(TI);
         containerChecks.add(TE);
         containerChecks.add(HR);

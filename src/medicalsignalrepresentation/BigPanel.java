@@ -7,7 +7,6 @@
 package medicalsignalrepresentation;
 
 import java.awt.Dimension;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 
 /**
@@ -17,8 +16,6 @@ import javax.swing.JPanel;
  */
 public class BigPanel extends JPanel {
     
-    private ArrayList<String> signals;
-
     /**
      * Specific height of each plot.
      */
@@ -44,7 +41,6 @@ public class BigPanel extends JPanel {
     
     @Override
     public Dimension getPreferredSize() {
-        //return new Dimension(X_AXIS_AMOUNT + (xCoordNumbers * xLength), (Y_AXIS_AMOUNT*signals.size())+titleAmount);
         return new Dimension(X_AXIS_AMOUNT + (xCoordNumbers * xLength), (Y_AXIS_AMOUNT*this.getComponents().length)+titleAmount);
     }
     

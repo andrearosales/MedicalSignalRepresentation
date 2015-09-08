@@ -20,19 +20,12 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import javax.swing.JPanel;
 import javax.swing.Timer;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
 
 
 /**
@@ -77,7 +70,6 @@ class CartesianPanel extends JPanel implements ActionListener{
     private int yMinimum;
     private int yMaximum;
     private Color titleColor;
-    private int cicle;
     private int xLength;
     
     /**
@@ -92,7 +84,6 @@ class CartesianPanel extends JPanel implements ActionListener{
                 / xCoordNumbers;
         counter=0;
         counterTop=0;
-        cicle=0;
         finish=false;
         listPoints = new ArrayList<>();
         Point2D.Double origin = new Point2D.Double(counter, 0);
@@ -103,7 +94,6 @@ class CartesianPanel extends JPanel implements ActionListener{
         yMaximum = maximum;
         titleColor = color;
         readFile();
-        //printPoints();
     }
         
     /**
@@ -148,12 +138,7 @@ class CartesianPanel extends JPanel implements ActionListener{
                     top++;
                 }
                 if((line = br.readLine()) == null)
-                    finish=true;
-                System.out.println("countertop "+counterTop);
-                //counter=1;
-
-                cicle++;
-                
+                    finish=true;                
 
 	} catch (FileNotFoundException e) {
 		e.printStackTrace();
@@ -290,7 +275,6 @@ class CartesianPanel extends JPanel implements ActionListener{
         Font font2 = new Font(g2.getFont().getFontName(), Font.PLAIN, 10);
         g2.setFont(font2); 
         
-        
         // draw x-axis numbers
         for(int i = 1; i < listPoints.size(); i++) {
             g2.drawLine(X_AXIS_FIRST_X_COORD + (i * xLength),
@@ -308,7 +292,6 @@ class CartesianPanel extends JPanel implements ActionListener{
                         X_AXIS_Y_COORD + AXIS_STRING_DISTANCE);
             }
         
-                
         int yLength;
         
         float division;
@@ -316,7 +299,6 @@ class CartesianPanel extends JPanel implements ActionListener{
             Float max = (float)yMaximum;
             yLength = (Y_AXIS_SECOND_Y_COORD - Y_AXIS_FIRST_Y_COORD)
                     / yCoordNumbers;
-            //division = (int)Math.ceil(max / yCoordNumbers);
             division = max / yCoordNumbers;
             for(int i = 1; i < yCoordNumbers; i++) {
                 g2.drawLine(Y_AXIS_X_COORD - SECOND_LENGHT,
@@ -449,14 +431,10 @@ class CartesianPanel extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
         if(ae.getSource()==timer){
             if(!finish){
-                //removeAll();
                 readFile();
-                //printPoints();
                 revalidate();
                 repaint();// this will call at every s seconds
             }
-            //else
-              //  revalidate();
         }
     }
     
