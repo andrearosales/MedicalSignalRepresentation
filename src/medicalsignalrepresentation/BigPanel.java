@@ -1,9 +1,8 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
-
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package medicalsignalrepresentation;
 
 import java.awt.Dimension;
@@ -11,11 +10,11 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author aRosales
- * Panel that contains the plots of the signal the user selected.
+ * @author aRosales Panel that contains the plots of the signal the user
+ * selected.
  */
 public class BigPanel extends JPanel {
-    
+
     /**
      * Specific height of each plot.
      */
@@ -28,20 +27,20 @@ public class BigPanel extends JPanel {
     private static int xLength = 23;
     private static int xCoordNumbers = 23;
     private int titleAmount;
-    
+
     /**
-     * Constructor of the class that initializes the values that are needed to specify the panel dimension.
+     * Constructor of the class that initializes the values that are needed to
+     * specify the panel dimension.
+     *
      * @param height - Height of the title label
      */
     public BigPanel(int height) {
         titleAmount = height;
     }
-    
-    
-    
+
     @Override
     public Dimension getPreferredSize() {
-        return new Dimension(X_AXIS_AMOUNT + (xCoordNumbers * xLength), (Y_AXIS_AMOUNT*this.getComponents().length)+titleAmount);
+        return new Dimension(X_AXIS_AMOUNT + (xCoordNumbers * xLength), (Y_AXIS_AMOUNT * this.getComponents().length) + titleAmount);
     }
-    
+
 }

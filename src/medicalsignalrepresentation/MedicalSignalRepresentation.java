@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package medicalsignalrepresentation;
 
 import javax.swing.SwingUtilities;
 
 /**
  *
- * @author aRosales
- * Main class of the project. Runs the panel with the physiological signals that can be displayed.
+ * @author aRosales Main class of the project. Runs the panel with the
+ * physiological signals that can be displayed.
  */
 public class MedicalSignalRepresentation {
 
@@ -20,15 +19,15 @@ public class MedicalSignalRepresentation {
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-   
-        @Override
-        public void run() {
-            CartesianFrame frame = new CartesianFrame();
-            frame.showUI();
+
+            @Override
+            public void run() {
+                CartesianFrame frame = new CartesianFrame();
+                frame.showUI();
             //SignalOptions sO = new SignalOptions();
-            //sO.showUI();
-        }
-             });
+                //sO.showUI();
+            }
+        });
     }
-    
+
 }
