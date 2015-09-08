@@ -24,8 +24,6 @@ public class MedicalSignalRepresentation {
             public void run() {
                 CartesianFrame frame = new CartesianFrame();
                 frame.showUI();
-            //SignalOptions sO = new SignalOptions();
-                //sO.showUI();
             }
         });
     }

@@ -73,7 +73,6 @@ class CartesianFrame extends JFrame implements ItemListener {
 
         for (int i = 0; i < signals.size(); i++) {
             String selected = signals.get(i);
-
             if (selected.equalsIgnoreCase("FIO2")) {
                 contFIO2 = new Container();
                 contFIO2.setLayout(new BoxLayout(contFIO2, BoxLayout.Y_AXIS));
@@ -261,7 +260,7 @@ class CartesianFrame extends JFrame implements ItemListener {
         initializeOptions();
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
-        //Adding the General Title
+        //Adding the general title
         JLabel labelTitle = new JLabel();
         labelTitle.setText("MEDICAL PHYSIOLOGICAL SIGNALS");
         labelTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
