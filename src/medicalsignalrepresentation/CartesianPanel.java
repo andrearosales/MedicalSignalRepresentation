@@ -288,13 +288,13 @@ class CartesianPanel extends JPanel implements ActionListener {
                         Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i + 1).y * yCoordNumbers / yMaximum) * yLength));
                 initialVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
                         Y_AXIS_SECOND_Y_COORD);
+                endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
+                        Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y * yCoordNumbers / yMaximum) * yLength));
 
                 g2.draw(new Ellipse2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength) - (point_lenght / 2),
                         Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y * yCoordNumbers / yMaximum) * yLength) - (point_lenght / 2),
                         point_lenght, point_lenght));
 
-                endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
-                        Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y * yCoordNumbers / yMaximum) * yLength));
                 /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                  Y_AXIS_SECOND_Y_COORD - ((listPoints.get(i).y*yCoordNumbers/yMaximum) * yLength));
                  endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
@@ -304,15 +304,14 @@ class CartesianPanel extends JPanel implements ActionListener {
                         Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
                 end = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i + 1).x * xLength),
                         Y_AXIS_SECOND_Y_COORD - (listPoints.get(i + 1).y * yLength));
-
-                g2.draw(new Ellipse2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength) - (point_lenght / 2),
-                        Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength) - (point_lenght / 2),
-                        point_lenght, point_lenght));
-
                 initialVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
                         Y_AXIS_SECOND_Y_COORD);
                 endVertical = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
                         Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
+
+                g2.draw(new Ellipse2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength) - (point_lenght / 2),
+                        Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength) - (point_lenght / 2),
+                        point_lenght, point_lenght));
                 /*initialHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD,
                  Y_AXIS_SECOND_Y_COORD - (listPoints.get(i).y * yLength));
                  endHorizontal = new Point2D.Double(X_AXIS_FIRST_X_COORD + (listPoints.get(i).x * xLength),
