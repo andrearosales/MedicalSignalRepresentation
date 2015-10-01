@@ -207,8 +207,46 @@ class CartesianPanel extends JPanel implements ActionListener {
         // draw text "X" and draw text "Y"
         g2.drawString("X", X_AXIS_FIRST_X_COORD + (listPoints.size() * xLength),
                 X_AXIS_Y_COORD + AXIS_STRING_DISTANCE);
-        g2.drawString(dataY, Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+        if(dataY.contains("FIO2")){
+            g2.drawString(dataY + " (%)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
                 Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("FEO2")){
+            g2.drawString(dataY + " (%)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("FECO2")){
+            g2.drawString(dataY + " (%)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("FETCO2")){
+            g2.drawString(dataY + " (%)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("FETO2")){
+            g2.drawString(dataY + " (%)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("VE")){
+            g2.drawString(dataY + " (l/min)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("TI")){
+            g2.drawString(dataY + " (s)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("TE")){
+            g2.drawString(dataY + " (s)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else if (dataY.contains("HR")){
+            g2.drawString(dataY + " (bpm)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
+        else{
+            g2.drawString(dataY + " (l/min)", Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
+                Y_AXIS_DATA_Y_COORD);
+        }
         g2.drawString("(0, 0)", X_AXIS_FIRST_X_COORD - AXIS_STRING_DISTANCE,
                 Y_AXIS_SECOND_Y_COORD + AXIS_STRING_DISTANCE);
 
@@ -235,20 +273,22 @@ class CartesianPanel extends JPanel implements ActionListener {
         float division;
         if (yMaximum > yCoordNumbers) {
             Float max = (float) yMaximum;
-            yLength = (Y_AXIS_SECOND_Y_COORD - Y_AXIS_FIRST_Y_COORD)
-                    / yCoordNumbers;
+            yLength = (int)Math.ceil((Y_AXIS_SECOND_Y_COORD - Y_AXIS_FIRST_Y_COORD)
+                    / yCoordNumbers);
             division = max / yCoordNumbers;
+            division = (float)Math.ceil(division);
             for (int i = 1; i < yCoordNumbers; i++) {
                 g2.drawLine(Y_AXIS_X_COORD - SECOND_LENGHT,
                         Y_AXIS_SECOND_Y_COORD - (i * yLength),
                         Y_AXIS_X_COORD + SECOND_LENGHT,
                         Y_AXIS_SECOND_Y_COORD - (i * yLength));
-                String result = String.format("%.2f", i * division);
+                String result = String.format("%.0f", i * division);
                 g2.drawString(result,
                         Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
                         Y_AXIS_SECOND_Y_COORD - (i * yLength));
             }
-            g2.drawString(Double.toString(yCoordNumbers * division),
+            String result = String.format("%.0f", yCoordNumbers * division);
+            g2.drawString(result,
                     Y_AXIS_X_COORD - AXIS_STRING_DISTANCE,
                     Y_AXIS_SECOND_Y_COORD - (yCoordNumbers * yLength));
         } else {
